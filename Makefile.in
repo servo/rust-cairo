@@ -1,0 +1,49 @@
+VPATH=%VPATH%
+
+CC ?= gcc
+CXX ?= g++
+CXXFLAGS ?=
+AR ?= ar
+RUSTC ?= rustc
+RUSTFLAGS ?=
+
+UNAME=$(shell uname)
+
+ifeq ($(UNAME),Darwin)
+    OSTYPE=darwin
+endif
+ifeq ($(UNAME),Linux)
+    OSTYPE=linux
+endif
+
+ifeq ($(OSTYPE),darwin)
+# Cairo is not on the default library path for Darwin.
+# FIXME: This is not the right way to set up the lib location
+RUSTFLAGS += -L/opt/local/lib \
+	-L /usr/local/Cellar/cairo/1.10.2/lib \
+	$(NULL)
+endif
+
+RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
+
+.PHONE: all
+all:	librustcairo.dummy
+
+%.o:	%.c
+	$(CC) $< -o $@ -c $(CFLAGS)
+
+librustcairo.dummy: cairo.rc $(RUST_SRC)
+	$(RUSTC) $(RUSTFLAGS) $< -o $@
+	touch $@
+
+cairo-test: cairo.rc $(RUST_SRC)
+	$(RUSTC) $(RUSTFLAGS) $< -o $@ --test
+
+.PHONY: check
+check: cairo-test
+	./cairo-test
+
+.PHONY: clean
+clean:
+	rm -f *.o *.a *.so *.dylib *.dll *.dummy
+

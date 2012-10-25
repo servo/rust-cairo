@@ -1,0 +1,18 @@
+#[link(name = "cairo",
+       vers = "0.1")];
+#[crate_type = "lib"];
+
+extern mod std;
+
+pub mod cairo;
+pub mod cairo_hl;
+
+#[cfg(target_os = "linux")]
+pub mod cairo_xlib;
+
+#[cfg(target_os = "linux")]
+pub mod cairo_ft;
+
+#[cfg(target_os = "macos")]
+pub mod cairo_quartz;
+
