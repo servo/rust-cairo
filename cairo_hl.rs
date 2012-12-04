@@ -1,5 +1,6 @@
 // High-level bindings to Cairo.
 
+use libc::*;
 use cairo::{CAIRO_STATUS_SUCCESS, cairo_format_t, cairo_status_t, cairo_surface_t, cairo_t};
 use cairo::bindgen::{cairo_create, cairo_fill, cairo_image_surface_create};
 use cairo::bindgen::{cairo_image_surface_get_data, cairo_image_surface_get_format};
