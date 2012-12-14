@@ -2,7 +2,7 @@
 
 extern mod core_graphics;
 
-use core_graphics::font::CGFontRef;
+use cairo_quartz::core_graphics::font::CGFontRef;
 
 #[nolink]
 pub extern mod bindgen {
