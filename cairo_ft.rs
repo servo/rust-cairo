@@ -4,8 +4,8 @@ use libc::*;
 extern mod freetype;
 extern mod fontconfig;
 
-use freetype::freetype::FT_Face;
-use fontconfig::fontconfig::FcPattern;
+use cairo_ft::freetype::freetype::FT_Face;
+use cairo_ft::fontconfig::fontconfig::FcPattern;
 
 use cairo::{
     cairo_font_face_t, cairo_scaled_font_t, cairo_font_options_t
