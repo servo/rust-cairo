@@ -6,7 +6,7 @@ use libc::*;
 use cairo_xlib::xlib::xlib::{Display, Drawable, Visual, Screen, Pixmap};
 use cairo::cairo_surface_t;
 
-#[link_name="cairo"]
+#[nolink]
 pub extern mod bindgen {
 
 fn cairo_xlib_surface_create(++arg0: *Display, ++arg1: Drawable, ++arg2: *Visual, ++arg3: c_int, ++arg4: c_int) -> *cairo_surface_t;

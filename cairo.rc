@@ -16,3 +16,7 @@ pub mod cairo_ft;
 #[cfg(target_os = "macos")]
 pub mod cairo_quartz;
 
+#[nolink]
+#[link_args = "../cairo/src/.libs/libcairo.a ../pixman/pixman/.libs/libpixman-1.a"]
+extern mod linkhack {
+}

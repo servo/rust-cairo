@@ -393,7 +393,7 @@ pub type struct_unnamed2 = {
     y: c_double,
 };
 
-#[link_name="cairo"]
+#[nolink]
 pub extern mod bindgen {
 
 pub fn cairo_version() -> c_int;

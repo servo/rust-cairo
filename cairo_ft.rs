@@ -11,7 +11,7 @@ use cairo::{
     cairo_font_face_t, cairo_scaled_font_t, cairo_font_options_t
 };
 
-#[link_name="cairo"]
+#[nolink]
 pub extern mod bindgen {
 
 pub fn cairo_ft_font_face_create_for_ft_face(++face: FT_Face, ++load_flags: c_int) -> *cairo_font_face_t;
