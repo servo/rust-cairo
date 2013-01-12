@@ -17,6 +17,9 @@ pub mod cairo_ft;
 pub mod cairo_quartz;
 
 #[nolink]
-#[link_args = "../cairo/src/.libs/libcairo.a ../pixman/pixman/.libs/libpixman-1.a"]
-extern mod linkhack {
-}
+#[link_args = "../cairo/src/.libs/libcairo.a ../pixman/pixman/.libs/libpixman-1.a -lpng"]
+extern mod linkhack { }
+
+#[nolink]
+#[link_args = "-lXrender"]
+extern mod linkhack_linux {}
