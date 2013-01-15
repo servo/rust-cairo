@@ -7,7 +7,7 @@ use cairo::bindgen::{cairo_image_surface_get_data, cairo_image_surface_get_forma
 use cairo::bindgen::{cairo_image_surface_get_height, cairo_image_surface_get_stride};
 use cairo::bindgen::{cairo_image_surface_get_width, cairo_rectangle, cairo_set_line_width};
 use cairo::bindgen::{cairo_set_source_rgb, cairo_stroke, cairo_surface_destroy};
-use cairo::bindgen::{cairo_surface_reference, cairo_surface_write_to_png_stream};
+use cairo::bindgen::{cairo_surface_reference};
 use cast::{reinterpret_cast, transmute};
 use io::{BytesWriter, Writer};
 use ptr::addr_of;
@@ -54,7 +54,7 @@ pub fn ImageSurface(format: cairo_format_t, width: c_int, height: c_int) -> Imag
 }
 
 impl ImageSurface {
-    fn write_to_png_stream(buffer: &BytesWriter) -> Result<(),cairo_status_t> unsafe {
+    /*fn write_to_png_stream(buffer: &BytesWriter) -> Result<(),cairo_status_t> unsafe {
         extern fn write_fn(closure: *c_void, data: *c_uchar, len: c_uint)
                         -> cairo_status_t unsafe {
             let writer: *BytesWriter = reinterpret_cast(&closure);
@@ -71,7 +71,7 @@ impl ImageSurface {
         }
 
         return Ok(());
-    }
+    }*/
 
     pure fn clone() -> ImageSurface {
         unsafe {

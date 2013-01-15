@@ -746,9 +746,10 @@ pub fn cairo_surface_get_type(++arg0: *cairo_surface_t) -> cairo_surface_type_t;
 
 pub fn cairo_surface_get_content(++arg0: *cairo_surface_t) -> cairo_content_t;
 
-pub fn cairo_surface_write_to_png(++arg0: *cairo_surface_t, ++arg1: *c_char) -> cairo_status_t;
+/*pub fn cairo_surface_write_to_png(++arg0: *cairo_surface_t, ++arg1: *c_char) -> cairo_status_t;
 
 pub fn cairo_surface_write_to_png_stream(++arg0: *cairo_surface_t, ++arg1: cairo_write_func_t, ++arg2: *c_void) -> cairo_status_t;
+*/
 
 pub fn cairo_surface_get_user_data(++arg0: *cairo_surface_t, ++arg1: *cairo_user_data_key_t) -> *c_void;
 
@@ -792,9 +793,11 @@ pub fn cairo_image_surface_get_height(++arg0: *cairo_surface_t) -> c_int;
 
 pub fn cairo_image_surface_get_stride(++arg0: *cairo_surface_t) -> c_int;
 
+/*
 pub fn cairo_image_surface_create_from_png(++arg0: *c_char) -> *cairo_surface_t;
 
 pub fn cairo_image_surface_create_from_png_stream(++arg0: cairo_read_func_t, ++arg1: *c_void) -> *cairo_surface_t;
+*/
 
 pub fn cairo_recording_surface_create(++arg0: cairo_content_t, ++arg1: *cairo_rectangle_t) -> *cairo_surface_t;
 
