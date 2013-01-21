@@ -2,6 +2,7 @@
 
 extern mod core_graphics;
 
+use cairo;
 use cairo_quartz::core_graphics::font::CGFontRef;
 
 #[nolink]
