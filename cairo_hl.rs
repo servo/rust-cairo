@@ -19,21 +19,23 @@ pub struct ImageSurface {
     cairo_surface: *cairo_surface_t,
 
     drop {
-        cairo_surface_destroy(self.cairo_surface);
+        unsafe {
+            cairo_surface_destroy(self.cairo_surface);
+        }
     }
 }
 
 
 impl ImageSurface {
-    fn width()  -> c_int    { cairo_image_surface_get_width(self.cairo_surface)  }
-    fn height() -> c_int    { cairo_image_surface_get_height(self.cairo_surface) }
-    fn stride() -> c_int    { cairo_image_surface_get_stride(self.cairo_surface) }
-    fn format() -> c_int    { cairo_image_surface_get_format(self.cairo_surface) }
+    fn width()  -> c_int    { unsafe { cairo_image_surface_get_width(self.cairo_surface) } }
+    fn height() -> c_int    { unsafe { cairo_image_surface_get_height(self.cairo_surface) } }
+    fn stride() -> c_int    { unsafe { cairo_image_surface_get_stride(self.cairo_surface) } }
+    fn format() -> c_int    { unsafe { cairo_image_surface_get_format(self.cairo_surface) } }
 
-    pure fn data(&self) -> &self/[u8] unsafe {
-        let buffer = cairo_image_surface_get_data(self.cairo_surface);
-        let len = (self.stride() * self.height()) as uint;
+    pure fn data(&self) -> &self/[u8] {
         unsafe {
+            let buffer = cairo_image_surface_get_data(self.cairo_surface);
+            let len = (self.stride() * self.height()) as uint;
             return vec::raw::buf_as_slice(buffer, len, |x| transmute(x));
         }
     }
@@ -46,11 +48,13 @@ fn image_surface_from_cairo_surface(cairo_surface: *cairo_surface_t) -> ImageSur
 }
 
 pub fn ImageSurface(format: cairo_format_t, width: c_int, height: c_int) -> ImageSurface {
-    let cairo_surface = cairo_image_surface_create(format, width, height);
-    if cairo_surface.is_null() {
-        fail ~"couldn't create Cairo image surface";
+    unsafe {
+        let cairo_surface = cairo_image_surface_create(format, width, height);
+        if cairo_surface.is_null() {
+            fail ~"couldn't create Cairo image surface";
+        }
+        return image_surface_from_cairo_surface(move cairo_surface);
     }
-    return image_surface_from_cairo_surface(move cairo_surface);
 }
 
 impl ImageSurface {
@@ -87,29 +91,41 @@ struct Context {
 
 impl Context {
     fn set_line_width(width: c_double) {
-        cairo_set_line_width(self.cairo_context, width);
+        unsafe {
+            cairo_set_line_width(self.cairo_context, width);
+        }
     }
 
     fn set_source_rgb(r: c_double, g: c_double, b: c_double) {
-        cairo_set_source_rgb(self.cairo_context, r, g, b);
+        unsafe {
+            cairo_set_source_rgb(self.cairo_context, r, g, b);
+        }
     }
 
     fn rectangle(x: c_double, y: c_double, width: c_double, height: c_double) {
-        cairo_rectangle(self.cairo_context, x, y, width, height);
+        unsafe {
+            cairo_rectangle(self.cairo_context, x, y, width, height);
+        }
     }
 
     fn stroke() {
-        cairo_stroke(self.cairo_context);
+        unsafe {
+            cairo_stroke(self.cairo_context);
+        }
     }
 
     fn fill() {
-        cairo_fill(self.cairo_context);
+        unsafe {
+            cairo_fill(self.cairo_context);
+        }
     }
 }
 
 
 fn make_context(surface: &ImageSurface) -> Context {
-    Context {
-        cairo_context: cairo_create(surface.cairo_surface)
+    unsafe {
+        Context {
+            cairo_context: cairo_create(surface.cairo_surface)
+        }
     }
 }
