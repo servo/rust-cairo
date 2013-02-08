@@ -16,14 +16,14 @@ pub type struct__cairo_device = c_void;
 
 pub type cairo_device_t = struct__cairo_device;
 
-pub type struct__cairo_matrix = {
+pub struct struct__cairo_matrix {
     xx: c_double,
     yx: c_double,
     xy: c_double,
     yy: c_double,
     x0: c_double,
     y0: c_double,
-};
+}
 
 pub type cairo_matrix_t = struct__cairo_matrix;
 

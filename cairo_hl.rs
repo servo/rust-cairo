@@ -27,10 +27,26 @@ pub struct ImageSurface {
 
 
 impl ImageSurface {
-    fn width()  -> c_int    { unsafe { cairo_image_surface_get_width(self.cairo_surface) } }
-    fn height() -> c_int    { unsafe { cairo_image_surface_get_height(self.cairo_surface) } }
-    fn stride() -> c_int    { unsafe { cairo_image_surface_get_stride(self.cairo_surface) } }
-    fn format() -> c_int    { unsafe { cairo_image_surface_get_format(self.cairo_surface) } }
+    fn width()  -> c_int {
+        unsafe {
+            cairo_image_surface_get_width(self.cairo_surface)
+        }
+    }
+    fn height() -> c_int {
+        unsafe {
+            cairo_image_surface_get_height(self.cairo_surface)
+        }
+    }
+    fn stride() -> c_int {
+        unsafe {
+            cairo_image_surface_get_stride(self.cairo_surface)
+        }
+    }
+    fn format() -> c_int    {
+        unsafe {
+            cairo_image_surface_get_format(self.cairo_surface)
+        }
+    }
 
     pure fn data(&self) -> &self/[u8] {
         unsafe {
@@ -51,7 +67,7 @@ pub fn ImageSurface(format: cairo_format_t, width: c_int, height: c_int) -> Imag
     unsafe {
         let cairo_surface = cairo_image_surface_create(format, width, height);
         if cairo_surface.is_null() {
-            fail ~"couldn't create Cairo image surface";
+            fail!(~"couldn't create Cairo image surface");
         }
         return image_surface_from_cairo_surface(move cairo_surface);
     }
