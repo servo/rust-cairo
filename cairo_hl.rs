@@ -69,7 +69,7 @@ pub fn ImageSurface(format: cairo_format_t, width: c_int, height: c_int) -> Imag
         if cairo_surface.is_null() {
             fail!(~"couldn't create Cairo image surface");
         }
-        return image_surface_from_cairo_surface(move cairo_surface);
+        return image_surface_from_cairo_surface(cairo_surface);
     }
 }
 
