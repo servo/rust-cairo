@@ -1,6 +1,6 @@
 // High-level bindings to Cairo.
 
-use libc::*;
+use core::libc::*;
 use cairo::{CAIRO_STATUS_SUCCESS, cairo_format_t, cairo_status_t, cairo_surface_t, cairo_t};
 use cairo::bindgen::{cairo_create, cairo_fill, cairo_image_surface_create};
 use cairo::bindgen::{cairo_image_surface_get_data, cairo_image_surface_get_format};
@@ -8,11 +8,11 @@ use cairo::bindgen::{cairo_image_surface_get_height, cairo_image_surface_get_str
 use cairo::bindgen::{cairo_image_surface_get_width, cairo_rectangle, cairo_set_line_width};
 use cairo::bindgen::{cairo_set_source_rgb, cairo_stroke, cairo_surface_destroy};
 use cairo::bindgen::{cairo_surface_reference};
-use cast::{reinterpret_cast, transmute};
-use io::{BytesWriter, Writer};
-use ptr::addr_of;
-use result::{Err, Ok, Result};
-use vec::raw::{buf_as_slice, from_buf_raw};
+use core::cast::{reinterpret_cast, transmute};
+use core::io::{BytesWriter, Writer};
+use core::ptr::addr_of;
+use core::result::{Err, Ok, Result};
+use core::vec::raw::{buf_as_slice, from_buf_raw};
 
 // FIXME: We should have a hierarchy of surfaces, but this needs to wait on case classes.
 pub struct ImageSurface {
@@ -26,23 +26,23 @@ pub struct ImageSurface {
 }
 
 
-impl ImageSurface {
-    fn width()  -> c_int {
+pub impl ImageSurface {
+    fn width(&self)  -> c_int {
         unsafe {
             cairo_image_surface_get_width(self.cairo_surface)
         }
     }
-    fn height() -> c_int {
+    fn height(&self) -> c_int {
         unsafe {
             cairo_image_surface_get_height(self.cairo_surface)
         }
     }
-    fn stride() -> c_int {
+    fn stride(&self) -> c_int {
         unsafe {
             cairo_image_surface_get_stride(self.cairo_surface)
         }
     }
-    fn format() -> c_int    {
+    fn format(&self) -> c_int    {
         unsafe {
             cairo_image_surface_get_format(self.cairo_surface)
         }
@@ -93,7 +93,7 @@ impl ImageSurface {
         return Ok(());
     }*/
 
-    pure fn clone() -> ImageSurface {
+    pure fn clone(&self) -> ImageSurface {
         unsafe {
             cairo_surface_reference(self.cairo_surface);
             return image_surface_from_cairo_surface(self.cairo_surface);
@@ -106,31 +106,31 @@ struct Context {
 }
 
 impl Context {
-    fn set_line_width(width: c_double) {
+    fn set_line_width(&self, width: c_double) {
         unsafe {
             cairo_set_line_width(self.cairo_context, width);
         }
     }
 
-    fn set_source_rgb(r: c_double, g: c_double, b: c_double) {
+    fn set_source_rgb(&self, r: c_double, g: c_double, b: c_double) {
         unsafe {
             cairo_set_source_rgb(self.cairo_context, r, g, b);
         }
     }
 
-    fn rectangle(x: c_double, y: c_double, width: c_double, height: c_double) {
+    fn rectangle(&self, x: c_double, y: c_double, width: c_double, height: c_double) {
         unsafe {
             cairo_rectangle(self.cairo_context, x, y, width, height);
         }
     }
 
-    fn stroke() {
+    fn stroke(&self) {
         unsafe {
             cairo_stroke(self.cairo_context);
         }
     }
 
-    fn fill() {
+    fn fill(&self) {
         unsafe {
             cairo_fill(self.cairo_context);
         }

@@ -2,7 +2,7 @@
 
 extern mod xlib;
 
-use libc::*;
+use core::libc::*;
 use cairo_xlib::xlib::xlib::{Display, Drawable, Visual, Screen, Pixmap};
 use cairo::cairo_surface_t;
 
