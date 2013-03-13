@@ -33,9 +33,9 @@ pub type cairo_pattern_t = struct__cairo_pattern;
 
 pub type cairo_destroy_func_t = *u8;
 
-pub type struct__cairo_user_data_key = {
+pub struct struct__cairo_user_data_key {
     unused: c_int,
-};
+}
 
 pub type cairo_user_data_key_t = struct__cairo_user_data_key;
 
@@ -152,20 +152,20 @@ pub const CAIRO_LINE_JOIN_BEVEL: u32 = 2_u32;
 
 pub type cairo_line_join_t = enum__cairo_line_join;
 
-pub type struct__cairo_rectangle = {
+pub struct struct__cairo_rectangle {
     x: c_double,
     y: c_double,
     width: c_double,
     height: c_double,
-};
+}
 
 pub type cairo_rectangle_t = struct__cairo_rectangle;
 
-pub type struct__cairo_rectangle_list = {
+pub struct struct__cairo_rectangle_list {
     status: cairo_status_t,
     rectangles: *cairo_rectangle_t,
     num_rectangles: c_int,
-};
+}
 
 pub type cairo_rectangle_list_t = struct__cairo_rectangle_list;
 
@@ -177,38 +177,38 @@ pub type struct__cairo_font_face = c_void;
 
 pub type cairo_font_face_t = struct__cairo_font_face;
 
-pub type cairo_glyph_t = {
+pub struct cairo_glyph_t {
     index: c_ulong,
     x: c_double,
     y: c_double,
-};
+}
 
-pub type cairo_text_cluster_t = {
+pub struct cairo_text_cluster_t {
     num_bytes: c_int,
     num_glyphs: c_int,
-};
+}
 
 pub type enum__cairo_text_cluster_flags = c_uint;
 pub const CAIRO_TEXT_CLUSTER_FLAG_BACKWARD: u32 = 1_u32;
 
 pub type cairo_text_cluster_flags_t = enum__cairo_text_cluster_flags;
 
-pub type cairo_text_extents_t = {
+pub struct cairo_text_extents_t {
     x_bearing: c_double,
     y_bearing: c_double,
     width: c_double,
     height: c_double,
     x_advance: c_double,
     y_advance: c_double,
-};
+}
 
-pub type cairo_font_extents_t = {
+pub struct cairo_font_extents_t {
     ascent: c_double,
     descent: c_double,
     height: c_double,
     max_x_advance: c_double,
     max_y_advance: c_double,
-};
+}
 
 pub type enum__cairo_font_slant = c_uint;
 pub const CAIRO_FONT_SLANT_NORMAL: u32 = 0_u32;
@@ -281,11 +281,11 @@ pub type cairo_path_data_t = union__cairo_path_data_t;
 
 pub type union__cairo_path_data_t = c_void /* FIXME: union type */;
 
-pub type struct_cairo_path = {
+pub struct struct_cairo_path {
     status: cairo_status_t,
     data: *cairo_path_data_t,
     num_data: c_int,
-};
+}
 
 pub type cairo_path_t = struct_cairo_path;
 
@@ -367,12 +367,12 @@ pub type struct__cairo_region = c_void;
 
 pub type cairo_region_t = struct__cairo_region;
 
-pub type struct__cairo_rectangle_int = {
+pub struct struct__cairo_rectangle_int {
     x: c_int,
     y: c_int,
     width: c_int,
     height: c_int,
-};
+}
 
 pub type cairo_rectangle_int_t = struct__cairo_rectangle_int;
 
@@ -383,15 +383,15 @@ pub const CAIRO_REGION_OVERLAP_PART: u32 = 2_u32;
 
 pub type cairo_region_overlap_t = enum__cairo_region_overlap;
 
-pub type struct_unnamed1 = {
+pub struct struct_unnamed1 {
     _type: cairo_path_data_type_t,
     length: c_int,
-};
+}
 
-pub type struct_unnamed2 = {
+pub struct struct_unnamed2 {
     x: c_double,
     y: c_double,
-};
+}
 
 #[nolink]
 pub extern mod bindgen {

@@ -9,16 +9,14 @@ use cairo::bindgen::{cairo_image_surface_get_width, cairo_rectangle, cairo_set_l
 use cairo::bindgen::{cairo_set_source_rgb, cairo_stroke, cairo_surface_destroy};
 use cairo::bindgen::{cairo_surface_reference};
 use core::cast::{reinterpret_cast, transmute};
-use core::io::{BytesWriter, Writer};
-use core::ptr::addr_of;
-use core::result::{Err, Ok, Result};
-use core::vec::raw::{buf_as_slice, from_buf_raw};
 
 // FIXME: We should have a hierarchy of surfaces, but this needs to wait on case classes.
 pub struct ImageSurface {
     cairo_surface: *cairo_surface_t,
+}
 
-    drop {
+impl Drop for ImageSurface {
+    fn finalize(&self) {
         unsafe {
             cairo_surface_destroy(self.cairo_surface);
         }
@@ -59,7 +57,7 @@ pub impl ImageSurface {
 
 // Should be private.
 fn image_surface_from_cairo_surface(cairo_surface: *cairo_surface_t) -> ImageSurface {
-    assert !cairo_surface.is_null();
+    fail_unless!(!cairo_surface.is_null());
     ImageSurface { cairo_surface: cairo_surface }
 }
 

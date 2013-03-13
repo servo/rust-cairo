@@ -22,7 +22,7 @@ extern mod linkhack { }
 
 #[nolink]
 #[cfg(target_os = "linux")]
-#[link_args = "-lXrender -lpng"]
+#[link_args = "-lXrender -lpng -lX11"]
 extern mod linkhack_linux { }
 
 #[nolink]
