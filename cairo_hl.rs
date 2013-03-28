@@ -46,7 +46,7 @@ pub impl ImageSurface {
         }
     }
 
-    pure fn data(&self) -> &self/[u8] {
+    fn data(&self) -> &'self [u8] {
         unsafe {
             let buffer = cairo_image_surface_get_data(self.cairo_surface);
             let len = (self.stride() * self.height()) as uint;
@@ -91,7 +91,7 @@ impl ImageSurface {
         return Ok(());
     }*/
 
-    pure fn clone(&self) -> ImageSurface {
+    fn clone(&self) -> ImageSurface {
         unsafe {
             cairo_surface_reference(self.cairo_surface);
             return image_surface_from_cairo_surface(self.cairo_surface);
