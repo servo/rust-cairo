@@ -40,50 +40,50 @@ pub struct struct__cairo_user_data_key {
 pub type cairo_user_data_key_t = struct__cairo_user_data_key;
 
 pub type enum__cairo_status = c_uint;
-pub const CAIRO_STATUS_SUCCESS: u32 = 0_u32;
-pub const CAIRO_STATUS_NO_MEMORY: u32 = 1_u32;
-pub const CAIRO_STATUS_INVALID_RESTORE: u32 = 2_u32;
-pub const CAIRO_STATUS_INVALID_POP_GROUP: u32 = 3_u32;
-pub const CAIRO_STATUS_NO_CURRENT_POINT: u32 = 4_u32;
-pub const CAIRO_STATUS_INVALID_MATRIX: u32 = 5_u32;
-pub const CAIRO_STATUS_INVALID_STATUS: u32 = 6_u32;
-pub const CAIRO_STATUS_NULL_POINTER: u32 = 7_u32;
-pub const CAIRO_STATUS_INVALID_STRING: u32 = 8_u32;
-pub const CAIRO_STATUS_INVALID_PATH_DATA: u32 = 9_u32;
-pub const CAIRO_STATUS_READ_ERROR: u32 = 10_u32;
-pub const CAIRO_STATUS_WRITE_ERROR: u32 = 11_u32;
-pub const CAIRO_STATUS_SURFACE_FINISHED: u32 = 12_u32;
-pub const CAIRO_STATUS_SURFACE_TYPE_MISMATCH: u32 = 13_u32;
-pub const CAIRO_STATUS_PATTERN_TYPE_MISMATCH: u32 = 14_u32;
-pub const CAIRO_STATUS_INVALID_CONTENT: u32 = 15_u32;
-pub const CAIRO_STATUS_INVALID_FORMAT: u32 = 16_u32;
-pub const CAIRO_STATUS_INVALID_VISUAL: u32 = 17_u32;
-pub const CAIRO_STATUS_FILE_NOT_FOUND: u32 = 18_u32;
-pub const CAIRO_STATUS_INVALID_DASH: u32 = 19_u32;
-pub const CAIRO_STATUS_INVALID_DSC_COMMENT: u32 = 20_u32;
-pub const CAIRO_STATUS_INVALID_INDEX: u32 = 21_u32;
-pub const CAIRO_STATUS_CLIP_NOT_REPRESENTABLE: u32 = 22_u32;
-pub const CAIRO_STATUS_TEMP_FILE_ERROR: u32 = 23_u32;
-pub const CAIRO_STATUS_INVALID_STRIDE: u32 = 24_u32;
-pub const CAIRO_STATUS_FONT_TYPE_MISMATCH: u32 = 25_u32;
-pub const CAIRO_STATUS_USER_FONT_IMMUTABLE: u32 = 26_u32;
-pub const CAIRO_STATUS_USER_FONT_ERROR: u32 = 27_u32;
-pub const CAIRO_STATUS_NEGATIVE_COUNT: u32 = 28_u32;
-pub const CAIRO_STATUS_INVALID_CLUSTERS: u32 = 29_u32;
-pub const CAIRO_STATUS_INVALID_SLANT: u32 = 30_u32;
-pub const CAIRO_STATUS_INVALID_WEIGHT: u32 = 31_u32;
-pub const CAIRO_STATUS_INVALID_SIZE: u32 = 32_u32;
-pub const CAIRO_STATUS_USER_FONT_NOT_IMPLEMENTED: u32 = 33_u32;
-pub const CAIRO_STATUS_DEVICE_TYPE_MISMATCH: u32 = 34_u32;
-pub const CAIRO_STATUS_DEVICE_ERROR: u32 = 35_u32;
-pub const CAIRO_STATUS_LAST_STATUS: u32 = 36_u32;
+pub static CAIRO_STATUS_SUCCESS: u32 = 0_u32;
+pub static CAIRO_STATUS_NO_MEMORY: u32 = 1_u32;
+pub static CAIRO_STATUS_INVALID_RESTORE: u32 = 2_u32;
+pub static CAIRO_STATUS_INVALID_POP_GROUP: u32 = 3_u32;
+pub static CAIRO_STATUS_NO_CURRENT_POINT: u32 = 4_u32;
+pub static CAIRO_STATUS_INVALID_MATRIX: u32 = 5_u32;
+pub static CAIRO_STATUS_INVALID_STATUS: u32 = 6_u32;
+pub static CAIRO_STATUS_NULL_POINTER: u32 = 7_u32;
+pub static CAIRO_STATUS_INVALID_STRING: u32 = 8_u32;
+pub static CAIRO_STATUS_INVALID_PATH_DATA: u32 = 9_u32;
+pub static CAIRO_STATUS_READ_ERROR: u32 = 10_u32;
+pub static CAIRO_STATUS_WRITE_ERROR: u32 = 11_u32;
+pub static CAIRO_STATUS_SURFACE_FINISHED: u32 = 12_u32;
+pub static CAIRO_STATUS_SURFACE_TYPE_MISMATCH: u32 = 13_u32;
+pub static CAIRO_STATUS_PATTERN_TYPE_MISMATCH: u32 = 14_u32;
+pub static CAIRO_STATUS_INVALID_CONTENT: u32 = 15_u32;
+pub static CAIRO_STATUS_INVALID_FORMAT: u32 = 16_u32;
+pub static CAIRO_STATUS_INVALID_VISUAL: u32 = 17_u32;
+pub static CAIRO_STATUS_FILE_NOT_FOUND: u32 = 18_u32;
+pub static CAIRO_STATUS_INVALID_DASH: u32 = 19_u32;
+pub static CAIRO_STATUS_INVALID_DSC_COMMENT: u32 = 20_u32;
+pub static CAIRO_STATUS_INVALID_INDEX: u32 = 21_u32;
+pub static CAIRO_STATUS_CLIP_NOT_REPRESENTABLE: u32 = 22_u32;
+pub static CAIRO_STATUS_TEMP_FILE_ERROR: u32 = 23_u32;
+pub static CAIRO_STATUS_INVALID_STRIDE: u32 = 24_u32;
+pub static CAIRO_STATUS_FONT_TYPE_MISMATCH: u32 = 25_u32;
+pub static CAIRO_STATUS_USER_FONT_IMMUTABLE: u32 = 26_u32;
+pub static CAIRO_STATUS_USER_FONT_ERROR: u32 = 27_u32;
+pub static CAIRO_STATUS_NEGATIVE_COUNT: u32 = 28_u32;
+pub static CAIRO_STATUS_INVALID_CLUSTERS: u32 = 29_u32;
+pub static CAIRO_STATUS_INVALID_SLANT: u32 = 30_u32;
+pub static CAIRO_STATUS_INVALID_WEIGHT: u32 = 31_u32;
+pub static CAIRO_STATUS_INVALID_SIZE: u32 = 32_u32;
+pub static CAIRO_STATUS_USER_FONT_NOT_IMPLEMENTED: u32 = 33_u32;
+pub static CAIRO_STATUS_DEVICE_TYPE_MISMATCH: u32 = 34_u32;
+pub static CAIRO_STATUS_DEVICE_ERROR: u32 = 35_u32;
+pub static CAIRO_STATUS_LAST_STATUS: u32 = 36_u32;
 
 pub type cairo_status_t = enum__cairo_status;
 
 pub type enum__cairo_content = c_uint;
-pub const CAIRO_CONTENT_COLOR: u32 = 4096_u32;
-pub const CAIRO_CONTENT_ALPHA: u32 = 8192_u32;
-pub const CAIRO_CONTENT_COLOR_ALPHA: u32 = 12288_u32;
+pub static CAIRO_CONTENT_COLOR: u32 = 4096_u32;
+pub static CAIRO_CONTENT_ALPHA: u32 = 8192_u32;
+pub static CAIRO_CONTENT_COLOR_ALPHA: u32 = 12288_u32;
 
 pub type cairo_content_t = enum__cairo_content;
 
@@ -92,63 +92,63 @@ pub type cairo_write_func_t = *u8;
 pub type cairo_read_func_t = *u8;
 
 pub type enum__cairo_operator = c_uint;
-pub const CAIRO_OPERATOR_CLEAR: u32 = 0_u32;
-pub const CAIRO_OPERATOR_SOURCE: u32 = 1_u32;
-pub const CAIRO_OPERATOR_OVER: u32 = 2_u32;
-pub const CAIRO_OPERATOR_IN: u32 = 3_u32;
-pub const CAIRO_OPERATOR_OUT: u32 = 4_u32;
-pub const CAIRO_OPERATOR_ATOP: u32 = 5_u32;
-pub const CAIRO_OPERATOR_DEST: u32 = 6_u32;
-pub const CAIRO_OPERATOR_DEST_OVER: u32 = 7_u32;
-pub const CAIRO_OPERATOR_DEST_IN: u32 = 8_u32;
-pub const CAIRO_OPERATOR_DEST_OUT: u32 = 9_u32;
-pub const CAIRO_OPERATOR_DEST_ATOP: u32 = 10_u32;
-pub const CAIRO_OPERATOR_XOR: u32 = 11_u32;
-pub const CAIRO_OPERATOR_ADD: u32 = 12_u32;
-pub const CAIRO_OPERATOR_SATURATE: u32 = 13_u32;
-pub const CAIRO_OPERATOR_MULTIPLY: u32 = 14_u32;
-pub const CAIRO_OPERATOR_SCREEN: u32 = 15_u32;
-pub const CAIRO_OPERATOR_OVERLAY: u32 = 16_u32;
-pub const CAIRO_OPERATOR_DARKEN: u32 = 17_u32;
-pub const CAIRO_OPERATOR_LIGHTEN: u32 = 18_u32;
-pub const CAIRO_OPERATOR_COLOR_DODGE: u32 = 19_u32;
-pub const CAIRO_OPERATOR_COLOR_BURN: u32 = 20_u32;
-pub const CAIRO_OPERATOR_HARD_LIGHT: u32 = 21_u32;
-pub const CAIRO_OPERATOR_SOFT_LIGHT: u32 = 22_u32;
-pub const CAIRO_OPERATOR_DIFFERENCE: u32 = 23_u32;
-pub const CAIRO_OPERATOR_EXCLUSION: u32 = 24_u32;
-pub const CAIRO_OPERATOR_HSL_HUE: u32 = 25_u32;
-pub const CAIRO_OPERATOR_HSL_SATURATION: u32 = 26_u32;
-pub const CAIRO_OPERATOR_HSL_COLOR: u32 = 27_u32;
-pub const CAIRO_OPERATOR_HSL_LUMINOSITY: u32 = 28_u32;
+pub static CAIRO_OPERATOR_CLEAR: u32 = 0_u32;
+pub static CAIRO_OPERATOR_SOURCE: u32 = 1_u32;
+pub static CAIRO_OPERATOR_OVER: u32 = 2_u32;
+pub static CAIRO_OPERATOR_IN: u32 = 3_u32;
+pub static CAIRO_OPERATOR_OUT: u32 = 4_u32;
+pub static CAIRO_OPERATOR_ATOP: u32 = 5_u32;
+pub static CAIRO_OPERATOR_DEST: u32 = 6_u32;
+pub static CAIRO_OPERATOR_DEST_OVER: u32 = 7_u32;
+pub static CAIRO_OPERATOR_DEST_IN: u32 = 8_u32;
+pub static CAIRO_OPERATOR_DEST_OUT: u32 = 9_u32;
+pub static CAIRO_OPERATOR_DEST_ATOP: u32 = 10_u32;
+pub static CAIRO_OPERATOR_XOR: u32 = 11_u32;
+pub static CAIRO_OPERATOR_ADD: u32 = 12_u32;
+pub static CAIRO_OPERATOR_SATURATE: u32 = 13_u32;
+pub static CAIRO_OPERATOR_MULTIPLY: u32 = 14_u32;
+pub static CAIRO_OPERATOR_SCREEN: u32 = 15_u32;
+pub static CAIRO_OPERATOR_OVERLAY: u32 = 16_u32;
+pub static CAIRO_OPERATOR_DARKEN: u32 = 17_u32;
+pub static CAIRO_OPERATOR_LIGHTEN: u32 = 18_u32;
+pub static CAIRO_OPERATOR_COLOR_DODGE: u32 = 19_u32;
+pub static CAIRO_OPERATOR_COLOR_BURN: u32 = 20_u32;
+pub static CAIRO_OPERATOR_HARD_LIGHT: u32 = 21_u32;
+pub static CAIRO_OPERATOR_SOFT_LIGHT: u32 = 22_u32;
+pub static CAIRO_OPERATOR_DIFFERENCE: u32 = 23_u32;
+pub static CAIRO_OPERATOR_EXCLUSION: u32 = 24_u32;
+pub static CAIRO_OPERATOR_HSL_HUE: u32 = 25_u32;
+pub static CAIRO_OPERATOR_HSL_SATURATION: u32 = 26_u32;
+pub static CAIRO_OPERATOR_HSL_COLOR: u32 = 27_u32;
+pub static CAIRO_OPERATOR_HSL_LUMINOSITY: u32 = 28_u32;
 
 pub type cairo_operator_t = enum__cairo_operator;
 
 pub type enum__cairo_antialias = c_uint;
-pub const CAIRO_ANTIALIAS_DEFAULT: u32 = 0_u32;
-pub const CAIRO_ANTIALIAS_NONE: u32 = 1_u32;
-pub const CAIRO_ANTIALIAS_GRAY: u32 = 2_u32;
-pub const CAIRO_ANTIALIAS_SUBPIXEL: u32 = 3_u32;
+pub static CAIRO_ANTIALIAS_DEFAULT: u32 = 0_u32;
+pub static CAIRO_ANTIALIAS_NONE: u32 = 1_u32;
+pub static CAIRO_ANTIALIAS_GRAY: u32 = 2_u32;
+pub static CAIRO_ANTIALIAS_SUBPIXEL: u32 = 3_u32;
 
 pub type cairo_antialias_t = enum__cairo_antialias;
 
 pub type enum__cairo_fill_rule = c_uint;
-pub const CAIRO_FILL_RULE_WINDING: u32 = 0_u32;
-pub const CAIRO_FILL_RULE_EVEN_ODD: u32 = 1_u32;
+pub static CAIRO_FILL_RULE_WINDING: u32 = 0_u32;
+pub static CAIRO_FILL_RULE_EVEN_ODD: u32 = 1_u32;
 
 pub type cairo_fill_rule_t = enum__cairo_fill_rule;
 
 pub type enum__cairo_line_cap = c_uint;
-pub const CAIRO_LINE_CAP_BUTT: u32 = 0_u32;
-pub const CAIRO_LINE_CAP_ROUND: u32 = 1_u32;
-pub const CAIRO_LINE_CAP_SQUARE: u32 = 2_u32;
+pub static CAIRO_LINE_CAP_BUTT: u32 = 0_u32;
+pub static CAIRO_LINE_CAP_ROUND: u32 = 1_u32;
+pub static CAIRO_LINE_CAP_SQUARE: u32 = 2_u32;
 
 pub type cairo_line_cap_t = enum__cairo_line_cap;
 
 pub type enum__cairo_line_join = c_uint;
-pub const CAIRO_LINE_JOIN_MITER: u32 = 0_u32;
-pub const CAIRO_LINE_JOIN_ROUND: u32 = 1_u32;
-pub const CAIRO_LINE_JOIN_BEVEL: u32 = 2_u32;
+pub static CAIRO_LINE_JOIN_MITER: u32 = 0_u32;
+pub static CAIRO_LINE_JOIN_ROUND: u32 = 1_u32;
+pub static CAIRO_LINE_JOIN_BEVEL: u32 = 2_u32;
 
 pub type cairo_line_join_t = enum__cairo_line_join;
 
@@ -189,7 +189,7 @@ pub struct cairo_text_cluster_t {
 }
 
 pub type enum__cairo_text_cluster_flags = c_uint;
-pub const CAIRO_TEXT_CLUSTER_FLAG_BACKWARD: u32 = 1_u32;
+pub static CAIRO_TEXT_CLUSTER_FLAG_BACKWARD: u32 = 1_u32;
 
 pub type cairo_text_cluster_flags_t = enum__cairo_text_cluster_flags;
 
@@ -211,40 +211,40 @@ pub struct cairo_font_extents_t {
 }
 
 pub type enum__cairo_font_slant = c_uint;
-pub const CAIRO_FONT_SLANT_NORMAL: u32 = 0_u32;
-pub const CAIRO_FONT_SLANT_ITALIC: u32 = 1_u32;
-pub const CAIRO_FONT_SLANT_OBLIQUE: u32 = 2_u32;
+pub static CAIRO_FONT_SLANT_NORMAL: u32 = 0_u32;
+pub static CAIRO_FONT_SLANT_ITALIC: u32 = 1_u32;
+pub static CAIRO_FONT_SLANT_OBLIQUE: u32 = 2_u32;
 
 pub type cairo_font_slant_t = enum__cairo_font_slant;
 
 pub type enum__cairo_font_weight = c_uint;
-pub const CAIRO_FONT_WEIGHT_NORMAL: u32 = 0_u32;
-pub const CAIRO_FONT_WEIGHT_BOLD: u32 = 1_u32;
+pub static CAIRO_FONT_WEIGHT_NORMAL: u32 = 0_u32;
+pub static CAIRO_FONT_WEIGHT_BOLD: u32 = 1_u32;
 
 pub type cairo_font_weight_t = enum__cairo_font_weight;
 
 pub type enum__cairo_subpixel_order = c_uint;
-pub const CAIRO_SUBPIXEL_ORDER_DEFAULT: u32 = 0_u32;
-pub const CAIRO_SUBPIXEL_ORDER_RGB: u32 = 1_u32;
-pub const CAIRO_SUBPIXEL_ORDER_BGR: u32 = 2_u32;
-pub const CAIRO_SUBPIXEL_ORDER_VRGB: u32 = 3_u32;
-pub const CAIRO_SUBPIXEL_ORDER_VBGR: u32 = 4_u32;
+pub static CAIRO_SUBPIXEL_ORDER_DEFAULT: u32 = 0_u32;
+pub static CAIRO_SUBPIXEL_ORDER_RGB: u32 = 1_u32;
+pub static CAIRO_SUBPIXEL_ORDER_BGR: u32 = 2_u32;
+pub static CAIRO_SUBPIXEL_ORDER_VRGB: u32 = 3_u32;
+pub static CAIRO_SUBPIXEL_ORDER_VBGR: u32 = 4_u32;
 
 pub type cairo_subpixel_order_t = enum__cairo_subpixel_order;
 
 pub type enum__cairo_hint_style = c_uint;
-pub const CAIRO_HINT_STYLE_DEFAULT: u32 = 0_u32;
-pub const CAIRO_HINT_STYLE_NONE: u32 = 1_u32;
-pub const CAIRO_HINT_STYLE_SLIGHT: u32 = 2_u32;
-pub const CAIRO_HINT_STYLE_MEDIUM: u32 = 3_u32;
-pub const CAIRO_HINT_STYLE_FULL: u32 = 4_u32;
+pub static CAIRO_HINT_STYLE_DEFAULT: u32 = 0_u32;
+pub static CAIRO_HINT_STYLE_NONE: u32 = 1_u32;
+pub static CAIRO_HINT_STYLE_SLIGHT: u32 = 2_u32;
+pub static CAIRO_HINT_STYLE_MEDIUM: u32 = 3_u32;
+pub static CAIRO_HINT_STYLE_FULL: u32 = 4_u32;
 
 pub type cairo_hint_style_t = enum__cairo_hint_style;
 
 pub type enum__cairo_hint_metrics = c_uint;
-pub const CAIRO_HINT_METRICS_DEFAULT: u32 = 0_u32;
-pub const CAIRO_HINT_METRICS_OFF: u32 = 1_u32;
-pub const CAIRO_HINT_METRICS_ON: u32 = 2_u32;
+pub static CAIRO_HINT_METRICS_DEFAULT: u32 = 0_u32;
+pub static CAIRO_HINT_METRICS_OFF: u32 = 1_u32;
+pub static CAIRO_HINT_METRICS_ON: u32 = 2_u32;
 
 pub type cairo_hint_metrics_t = enum__cairo_hint_metrics;
 
@@ -253,11 +253,11 @@ pub type struct__cairo_font_options = c_void;
 pub type cairo_font_options_t = struct__cairo_font_options;
 
 pub type enum__cairo_font_type = c_uint;
-pub const CAIRO_FONT_TYPE_TOY: u32 = 0_u32;
-pub const CAIRO_FONT_TYPE_FT: u32 = 1_u32;
-pub const CAIRO_FONT_TYPE_WIN32: u32 = 2_u32;
-pub const CAIRO_FONT_TYPE_QUARTZ: u32 = 3_u32;
-pub const CAIRO_FONT_TYPE_USER: u32 = 4_u32;
+pub static CAIRO_FONT_TYPE_TOY: u32 = 0_u32;
+pub static CAIRO_FONT_TYPE_FT: u32 = 1_u32;
+pub static CAIRO_FONT_TYPE_WIN32: u32 = 2_u32;
+pub static CAIRO_FONT_TYPE_QUARTZ: u32 = 3_u32;
+pub static CAIRO_FONT_TYPE_USER: u32 = 4_u32;
 
 pub type cairo_font_type_t = enum__cairo_font_type;
 
@@ -270,10 +270,10 @@ pub type cairo_user_scaled_font_text_to_glyphs_func_t = *u8;
 pub type cairo_user_scaled_font_unicode_to_glyph_func_t = *u8;
 
 pub type enum__cairo_path_data_type = c_uint;
-pub const CAIRO_PATH_MOVE_TO: u32 = 0_u32;
-pub const CAIRO_PATH_LINE_TO: u32 = 1_u32;
-pub const CAIRO_PATH_CURVE_TO: u32 = 2_u32;
-pub const CAIRO_PATH_CLOSE_PATH: u32 = 3_u32;
+pub static CAIRO_PATH_MOVE_TO: u32 = 0_u32;
+pub static CAIRO_PATH_LINE_TO: u32 = 1_u32;
+pub static CAIRO_PATH_CURVE_TO: u32 = 2_u32;
+pub static CAIRO_PATH_CLOSE_PATH: u32 = 3_u32;
 
 pub type cairo_path_data_type_t = enum__cairo_path_data_type;
 
@@ -290,76 +290,76 @@ pub struct struct_cairo_path {
 pub type cairo_path_t = struct_cairo_path;
 
 pub type enum__cairo_device_type = c_uint;
-pub const CAIRO_DEVICE_TYPE_DRM: u32 = 0_u32;
-pub const CAIRO_DEVICE_TYPE_GL: u32 = 1_u32;
-pub const CAIRO_DEVICE_TYPE_SCRIPT: u32 = 2_u32;
-pub const CAIRO_DEVICE_TYPE_XCB: u32 = 3_u32;
-pub const CAIRO_DEVICE_TYPE_XLIB: u32 = 4_u32;
-pub const CAIRO_DEVICE_TYPE_XML: u32 = 5_u32;
+pub static CAIRO_DEVICE_TYPE_DRM: u32 = 0_u32;
+pub static CAIRO_DEVICE_TYPE_GL: u32 = 1_u32;
+pub static CAIRO_DEVICE_TYPE_SCRIPT: u32 = 2_u32;
+pub static CAIRO_DEVICE_TYPE_XCB: u32 = 3_u32;
+pub static CAIRO_DEVICE_TYPE_XLIB: u32 = 4_u32;
+pub static CAIRO_DEVICE_TYPE_XML: u32 = 5_u32;
 
 pub type cairo_device_type_t = enum__cairo_device_type;
 
 pub type enum__cairo_surface_type = c_uint;
-pub const CAIRO_SURFACE_TYPE_IMAGE: u32 = 0_u32;
-pub const CAIRO_SURFACE_TYPE_PDF: u32 = 1_u32;
-pub const CAIRO_SURFACE_TYPE_PS: u32 = 2_u32;
-pub const CAIRO_SURFACE_TYPE_XLIB: u32 = 3_u32;
-pub const CAIRO_SURFACE_TYPE_XCB: u32 = 4_u32;
-pub const CAIRO_SURFACE_TYPE_GLITZ: u32 = 5_u32;
-pub const CAIRO_SURFACE_TYPE_QUARTZ: u32 = 6_u32;
-pub const CAIRO_SURFACE_TYPE_WIN32: u32 = 7_u32;
-pub const CAIRO_SURFACE_TYPE_BEOS: u32 = 8_u32;
-pub const CAIRO_SURFACE_TYPE_DIRECTFB: u32 = 9_u32;
-pub const CAIRO_SURFACE_TYPE_SVG: u32 = 10_u32;
-pub const CAIRO_SURFACE_TYPE_OS2: u32 = 11_u32;
-pub const CAIRO_SURFACE_TYPE_WIN32_PRINTING: u32 = 12_u32;
-pub const CAIRO_SURFACE_TYPE_QUARTZ_IMAGE: u32 = 13_u32;
-pub const CAIRO_SURFACE_TYPE_SCRIPT: u32 = 14_u32;
-pub const CAIRO_SURFACE_TYPE_QT: u32 = 15_u32;
-pub const CAIRO_SURFACE_TYPE_RECORDING: u32 = 16_u32;
-pub const CAIRO_SURFACE_TYPE_VG: u32 = 17_u32;
-pub const CAIRO_SURFACE_TYPE_GL: u32 = 18_u32;
-pub const CAIRO_SURFACE_TYPE_DRM: u32 = 19_u32;
-pub const CAIRO_SURFACE_TYPE_TEE: u32 = 20_u32;
-pub const CAIRO_SURFACE_TYPE_XML: u32 = 21_u32;
-pub const CAIRO_SURFACE_TYPE_SKIA: u32 = 22_u32;
-pub const CAIRO_SURFACE_TYPE_SUBSURFACE: u32 = 23_u32;
+pub static CAIRO_SURFACE_TYPE_IMAGE: u32 = 0_u32;
+pub static CAIRO_SURFACE_TYPE_PDF: u32 = 1_u32;
+pub static CAIRO_SURFACE_TYPE_PS: u32 = 2_u32;
+pub static CAIRO_SURFACE_TYPE_XLIB: u32 = 3_u32;
+pub static CAIRO_SURFACE_TYPE_XCB: u32 = 4_u32;
+pub static CAIRO_SURFACE_TYPE_GLITZ: u32 = 5_u32;
+pub static CAIRO_SURFACE_TYPE_QUARTZ: u32 = 6_u32;
+pub static CAIRO_SURFACE_TYPE_WIN32: u32 = 7_u32;
+pub static CAIRO_SURFACE_TYPE_BEOS: u32 = 8_u32;
+pub static CAIRO_SURFACE_TYPE_DIRECTFB: u32 = 9_u32;
+pub static CAIRO_SURFACE_TYPE_SVG: u32 = 10_u32;
+pub static CAIRO_SURFACE_TYPE_OS2: u32 = 11_u32;
+pub static CAIRO_SURFACE_TYPE_WIN32_PRINTING: u32 = 12_u32;
+pub static CAIRO_SURFACE_TYPE_QUARTZ_IMAGE: u32 = 13_u32;
+pub static CAIRO_SURFACE_TYPE_SCRIPT: u32 = 14_u32;
+pub static CAIRO_SURFACE_TYPE_QT: u32 = 15_u32;
+pub static CAIRO_SURFACE_TYPE_RECORDING: u32 = 16_u32;
+pub static CAIRO_SURFACE_TYPE_VG: u32 = 17_u32;
+pub static CAIRO_SURFACE_TYPE_GL: u32 = 18_u32;
+pub static CAIRO_SURFACE_TYPE_DRM: u32 = 19_u32;
+pub static CAIRO_SURFACE_TYPE_TEE: u32 = 20_u32;
+pub static CAIRO_SURFACE_TYPE_XML: u32 = 21_u32;
+pub static CAIRO_SURFACE_TYPE_SKIA: u32 = 22_u32;
+pub static CAIRO_SURFACE_TYPE_SUBSURFACE: u32 = 23_u32;
 
 pub type cairo_surface_type_t = enum__cairo_surface_type;
 
 pub type enum__cairo_format = c_int;
-pub const CAIRO_FORMAT_INVALID: i32 = -1_i32;
-pub const CAIRO_FORMAT_ARGB32: i32 = 0_i32;
-pub const CAIRO_FORMAT_RGB24: i32 = 1_i32;
-pub const CAIRO_FORMAT_A8: i32 = 2_i32;
-pub const CAIRO_FORMAT_A1: i32 = 3_i32;
-pub const CAIRO_FORMAT_RGB16_565: i32 = 4_i32;
+pub static CAIRO_FORMAT_INVALID: i32 = -1_i32;
+pub static CAIRO_FORMAT_ARGB32: i32 = 0_i32;
+pub static CAIRO_FORMAT_RGB24: i32 = 1_i32;
+pub static CAIRO_FORMAT_A8: i32 = 2_i32;
+pub static CAIRO_FORMAT_A1: i32 = 3_i32;
+pub static CAIRO_FORMAT_RGB16_565: i32 = 4_i32;
 
 pub type cairo_format_t = enum__cairo_format;
 
 pub type enum__cairo_pattern_type = c_uint;
-pub const CAIRO_PATTERN_TYPE_SOLID: u32 = 0_u32;
-pub const CAIRO_PATTERN_TYPE_SURFACE: u32 = 1_u32;
-pub const CAIRO_PATTERN_TYPE_LINEAR: u32 = 2_u32;
-pub const CAIRO_PATTERN_TYPE_RADIAL: u32 = 3_u32;
+pub static CAIRO_PATTERN_TYPE_SOLID: u32 = 0_u32;
+pub static CAIRO_PATTERN_TYPE_SURFACE: u32 = 1_u32;
+pub static CAIRO_PATTERN_TYPE_LINEAR: u32 = 2_u32;
+pub static CAIRO_PATTERN_TYPE_RADIAL: u32 = 3_u32;
 
 pub type cairo_pattern_type_t = enum__cairo_pattern_type;
 
 pub type enum__cairo_extend = c_uint;
-pub const CAIRO_EXTEND_NONE: u32 = 0_u32;
-pub const CAIRO_EXTEND_REPEAT: u32 = 1_u32;
-pub const CAIRO_EXTEND_REFLECT: u32 = 2_u32;
-pub const CAIRO_EXTEND_PAD: u32 = 3_u32;
+pub static CAIRO_EXTEND_NONE: u32 = 0_u32;
+pub static CAIRO_EXTEND_REPEAT: u32 = 1_u32;
+pub static CAIRO_EXTEND_REFLECT: u32 = 2_u32;
+pub static CAIRO_EXTEND_PAD: u32 = 3_u32;
 
 pub type cairo_extend_t = enum__cairo_extend;
 
 pub type enum__cairo_filter = c_uint;
-pub const CAIRO_FILTER_FAST: u32 = 0_u32;
-pub const CAIRO_FILTER_GOOD: u32 = 1_u32;
-pub const CAIRO_FILTER_BEST: u32 = 2_u32;
-pub const CAIRO_FILTER_NEAREST: u32 = 3_u32;
-pub const CAIRO_FILTER_BILINEAR: u32 = 4_u32;
-pub const CAIRO_FILTER_GAUSSIAN: u32 = 5_u32;
+pub static CAIRO_FILTER_FAST: u32 = 0_u32;
+pub static CAIRO_FILTER_GOOD: u32 = 1_u32;
+pub static CAIRO_FILTER_BEST: u32 = 2_u32;
+pub static CAIRO_FILTER_NEAREST: u32 = 3_u32;
+pub static CAIRO_FILTER_BILINEAR: u32 = 4_u32;
+pub static CAIRO_FILTER_GAUSSIAN: u32 = 5_u32;
 
 pub type cairo_filter_t = enum__cairo_filter;
 
@@ -377,9 +377,9 @@ pub struct struct__cairo_rectangle_int {
 pub type cairo_rectangle_int_t = struct__cairo_rectangle_int;
 
 pub type enum__cairo_region_overlap = c_uint;
-pub const CAIRO_REGION_OVERLAP_IN: u32 = 0_u32;
-pub const CAIRO_REGION_OVERLAP_OUT: u32 = 1_u32;
-pub const CAIRO_REGION_OVERLAP_PART: u32 = 2_u32;
+pub static CAIRO_REGION_OVERLAP_IN: u32 = 0_u32;
+pub static CAIRO_REGION_OVERLAP_OUT: u32 = 1_u32;
+pub static CAIRO_REGION_OVERLAP_PART: u32 = 2_u32;
 
 pub type cairo_region_overlap_t = enum__cairo_region_overlap;
 
