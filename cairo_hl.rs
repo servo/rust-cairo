@@ -1,14 +1,14 @@
 // High-level bindings to Cairo.
 
 use core::libc::*;
-use cairo::{CAIRO_STATUS_SUCCESS, cairo_format_t, cairo_status_t, cairo_surface_t, cairo_t};
+use cairo::{cairo_format_t, cairo_surface_t, cairo_t};
 use cairo::bindgen::{cairo_create, cairo_fill, cairo_image_surface_create};
 use cairo::bindgen::{cairo_image_surface_get_data, cairo_image_surface_get_format};
 use cairo::bindgen::{cairo_image_surface_get_height, cairo_image_surface_get_stride};
 use cairo::bindgen::{cairo_image_surface_get_width, cairo_rectangle, cairo_set_line_width};
 use cairo::bindgen::{cairo_set_source_rgb, cairo_stroke, cairo_surface_destroy};
 use cairo::bindgen::{cairo_surface_reference};
-use core::cast::{reinterpret_cast, transmute};
+use core::cast::transmute;
 
 // FIXME: We should have a hierarchy of surfaces, but this needs to wait on case classes.
 pub struct ImageSurface {
@@ -57,7 +57,7 @@ pub impl ImageSurface {
 
 // Should be private.
 fn image_surface_from_cairo_surface(cairo_surface: *cairo_surface_t) -> ImageSurface {
-    fail_unless!(!cairo_surface.is_null());
+    assert!(!cairo_surface.is_null());
     ImageSurface { cairo_surface: cairo_surface }
 }
 
