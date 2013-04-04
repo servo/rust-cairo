@@ -12,10 +12,15 @@ UNAME=$(shell uname)
 RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
 
 .PHONY: all
-all:	librustcairo.dummy
+all:	extlibs librustcairo.dummy
 
 %.o:	%.c
 	$(CC) $< -o $@ -c $(CFLAGS)
+
+.PHONY: extlibs
+extlibs:
+	@cp ../cairo/src/.libs/libcairo.a .
+	@cp ../pixman/pixman/.libs/libpixman-1.a .
 
 librustcairo.dummy: cairo.rc $(RUST_SRC)
 	$(RUSTC) $(RUSTFLAGS) $< -o $@
@@ -25,7 +30,7 @@ cairo-test: cairo.rc $(RUST_SRC)
 	$(RUSTC) $(RUSTFLAGS) $< -o $@ --test
 
 .PHONY: check
-check: cairo-test
+check: extlibs cairo-test
 	./cairo-test
 
 .PHONY: clean
